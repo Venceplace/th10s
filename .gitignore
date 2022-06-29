@@ -31,7 +31,9 @@ GTAGS
 # ctags files
 tags
 
-*.yrc
+#python files
+/__pycache__/
+*.pyc
 
 # clang files
 /.cache/
