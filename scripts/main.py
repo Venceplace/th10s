@@ -7,10 +7,10 @@ import sys
 import pyperclip
 sys.path.append("..")
 from ui.ui import Ui_Dialog
-import ico.inste
 import inspect
 from scripts._serail import _Serail
 from crc import CrcCalculator, Configuration
+import source.icon.inste
 
 class UserUI(QtWidgets.QDialog, QIntValidator,Ui_Dialog, _Serail):
     def __init__(self):
@@ -53,7 +53,36 @@ class UserUI(QtWidgets.QDialog, QIntValidator,Ui_Dialog, _Serail):
         self.comboBox_2.addItem('19200')
         self.comboBox_2.setCurrentText('2400')
         #self.comboBox.activated.connect(self.dis_serial_list)
-
+        
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "th10s"))
+        Dialog.setWindowIcon(QIcon(':/inste.ico'))
+        self.groupBox.setTitle(_translate("Dialog", "设置"))
+        self.groupBox_3.setTitle(_translate("Dialog", "通讯连接"))
+        self.label_5.setText(_translate("Dialog", "地址："))
+        self.label_3.setText(_translate("Dialog", "串口号："))
+        self.label_4.setText(_translate("Dialog", "波特率："))
+        self.pushButton_4.setText(_translate("Dialog", "连接"))
+        self.pushButton_9.setText(_translate("Dialog", "断开"))
+        self.groupBox_4.setTitle(_translate("Dialog", "配置参数"))
+        self.label_14.setText(_translate("Dialog", "地址："))
+        self.label_15.setText(_translate("Dialog", "波特率："))
+        self.radioButton_2.setText(_translate("Dialog", "配置波特率"))
+        self.pushButton_6.setText(_translate("Dialog", "读取"))
+        self.pushButton_5.setText(_translate("Dialog", "配置"))
+        self.pushButton_3.setText(_translate("Dialog", "广播配置"))
+        self.groupBox1.setTitle(_translate("Dialog", "数据"))
+        self.label_2.setText(_translate("Dialog", "温度"))
+        self.label_10.setText(_translate("Dialog", "℃"))
+        self.label_12.setText(_translate("Dialog", "湿度"))
+        self.label_13.setText(_translate("Dialog", "rh%"))
+        self.pushButton_2.setText(_translate("Dialog", "读取"))
+        self.radioButton.setText(_translate("Dialog", "连续采集"))
+        self.groupBox_2.setTitle(_translate("Dialog", "调试"))
+        self.pushButton_7.setText(_translate("Dialog", "复制"))
+        self.pushButton_8.setText(_translate("Dialog", "清除"))  
+        
     def setCrcCalculator(self):
         width = 16
         poly = 0x8005
