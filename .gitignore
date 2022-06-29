@@ -31,6 +31,8 @@ GTAGS
 # ctags files
 tags
 
+*.yrc
+
 # clang files
 /.cache/
 
